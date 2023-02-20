@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from "react-router-dom"
 import { Navbar } from "../../ui"
-import { CalculatePage, GymnasticPage, SearchPage, WeightLiftingPage } from "../pages"
+import { CalculatePage, GymnasticPage, SearchPage, WeightLiftingPage, PlatesBySidePage } from "../pages"
 import { WorkoutPage } from "../pages/WorkoutPage"
 
 export const WorkoutRoutes = () => {
@@ -14,6 +14,7 @@ export const WorkoutRoutes = () => {
 
                     <Route path="search" element={<SearchPage/>} />
                     <Route path="calculate" element={<CalculatePage/>} />
+                    <Route path="platesbyside" element={<PlatesBySidePage/>} />
                     <Route path="workout/:id" element={ <WorkoutPage/> }/>
 
                     <Route path="/" element={ <Navigate to="/gymnastic" /> }/>

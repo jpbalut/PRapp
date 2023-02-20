@@ -6,7 +6,7 @@ import queryString from 'query-string'
 //import { getWorkoutsByName } from '../helpers'
 
 
-export const CalculatePage = () => {
+export const PlatesBySidePage = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -65,7 +65,6 @@ export const CalculatePage = () => {
 {/* 
                 <div className="alert alert-primary animate__animated animate__fadeIn" >search workout</div>
                 <div className="alert alert-danger animate__animated animate__fadeIn" > No Workout <b>{q}</b> Found</div> */}
-                <CalculateTable varMaximo={q}/> 
                 <PlateCalculate peso={q}/>
                 
             {/* </div> */}
