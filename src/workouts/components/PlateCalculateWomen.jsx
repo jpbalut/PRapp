@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const PlateCalculateWomen = (peso) => {
+export const PlateCalculateWomen = (peso, bar) => {
     // const count = 0
     // while (peso % 45 === 0) {
     //     count++
@@ -9,7 +9,7 @@ export const PlateCalculateWomen = (peso) => {
     // }
     
 
-    const one_side = (peso.peso-35)/2
+    const one_side = (peso.peso-bar)/2
     const fourty_five_plates = Math.floor(one_side/45)
     const thrity_five_plates = Math.floor((one_side-fourty_five_plates*45)/35)
     const twenty_five_plates = Math.floor((one_side-fourty_five_plates*45-thrity_five_plates*35)/25)

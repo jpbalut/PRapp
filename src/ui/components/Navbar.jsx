@@ -49,12 +49,12 @@ export const Navbar = () => {
                         Calculate
                     </NavLink>
 
-                    <NavLink 
+                    {/* <NavLink 
                         className={({isActive}) => `nav-item nav-link ${ isActive ? 'active':''}`} 
                         to="/platesbyside"
                     >
                         Plates By Side
-                    </NavLink>
+                    </NavLink> */}
 
                     <NavLink 
                         className={({isActive}) => `nav-item nav-link ${ isActive ? "active":""}`} 
