@@ -1,7 +1,7 @@
 //import { CalculateTable, InputCalculate } from '../components'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useForm } from '../../hooks/useForm'
-import {CalculateTable, PlateCalculate} from '../components'
+import {CalculateTable, PlateCalculate45} from '../components'
 import queryString from 'query-string'
 //import { getWorkoutsByName } from '../helpers'
 
@@ -66,7 +66,7 @@ export const CalculatePage = () => {
                 <div className="alert alert-primary animate__animated animate__fadeIn" >search workout</div>
                 <div className="alert alert-danger animate__animated animate__fadeIn" > No Workout <b>{q}</b> Found</div> */}
                 <CalculateTable varMaximo={q}/> 
-                <PlateCalculate peso={q}/>
+                <PlateCalculate45 peso={q}/>
                 
             {/* </div> */}
         </div>

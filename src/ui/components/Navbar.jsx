@@ -12,7 +12,7 @@ export const Navbar = () => {
     }
 
     const {user} = useContext(AuthContext)
-    console.log(user)
+    //console.log(user)
     
     return (
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark p-2">
