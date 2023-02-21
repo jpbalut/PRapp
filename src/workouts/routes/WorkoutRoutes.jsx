@@ -17,7 +17,8 @@ export const WorkoutRoutes = () => {
                     <Route path="platesbyside" element={<PlatesBySidePage/>} />
                     <Route path="workout/:id" element={ <WorkoutPage/> }/>
 
-                    <Route path="/" element={ <Navigate to="/gymnastic" /> }/>
+                    <Route path="/" element={ <Navigate to="/calculate" /> }/>
+                    <Route path="/PRapp" element={ <Navigate to="/calculate" /> }/>
 
                 </Routes>
             </div>
