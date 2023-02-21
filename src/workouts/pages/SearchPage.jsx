@@ -23,22 +23,18 @@ export const SearchPage = () => {
 
 const onSearchSubmit = (event) => {
   event.preventDefault();
-  // if ( searchText.trim().length <= 1 ) return;
-
   navigate(`?q=${searchText}`)
 }
 
   return (
     <>
-      <h1>SearchPage</h1>
-      <hr />
       <div className="row">
         <div className="col-5">
-          <h4>Searching</h4>
+          <h4 className='mt-4'>Buscando</h4>
           <hr />
           <form onSubmit={onSearchSubmit}>
             <input type="text"
-              placeholder="Search Workout"
+              placeholder="Buscar Ejercicio"
               className="form-control"
               name="searchText"
               autoComplete="off"
@@ -48,14 +44,14 @@ const onSearchSubmit = (event) => {
             <button
               className="btn btn-outline-primary mt-1"
             >
-              Search
+              Buscar
             </button>
 
 
           </form>
         </div>
         <div className="col-7">
-          <h4>Results</h4>
+          <h4 className='mt-4'>Resultados</h4>
           <hr />
           {/* { 
             (q==='') 
@@ -64,8 +60,8 @@ const onSearchSubmit = (event) => {
             && <div className="alert alert-danger"> No Workout <b>{q}</b> Found</div>
           } */}
 
-            <div className="alert alert-primary animate__animated animate__fadeIn" style={{ display: showSearch ? '' : 'none'}}>search workout</div>
-            <div className="alert alert-danger animate__animated animate__fadeIn" style={{ display: showError ? '':'none'}}> No Workout <b>{q}</b> Found</div>
+            <div className="alert alert-primary animate__animated animate__fadeIn" style={{ display: showSearch ? '' : 'none'}}>Buscar Ejercicio</div>
+            <div className="alert alert-danger animate__animated animate__fadeIn" style={{ display: showError ? '':'none'}}> No se encontro el ejercicio <b>{q}</b> </div>
 
           { workouts.map(workout => (
             <WorkoutCard key = {workout.id} {...workout} /> 

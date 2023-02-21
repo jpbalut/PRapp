@@ -1,9 +1,8 @@
 //import { CalculateTable, InputCalculate } from '../components'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useForm } from '../../hooks/useForm'
-import {CalculateTable, PlateCalculate45} from '../components'
+import {CalculateTable} from '../components'
 import queryString from 'query-string'
-import { render } from 'react-dom'
 //import { getWorkoutsByName } from '../helpers'
 
 
@@ -12,7 +11,7 @@ export const CalculatePage = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const {q = ''} = queryString.parse(location.search);
+    const {q = 135} = queryString.parse(location.search);
     const {p = 45} = queryString.parse(location.search);
 
     const {calculateNumber, barraNumber, onInputChange } = useForm({
@@ -28,11 +27,11 @@ export const CalculatePage = () => {
     
     return (
         <>
-        <h1>CalculatePage</h1>
-        <hr />
+        {/* <h1>CalculatePage</h1>*/}
+        {/* <hr />  */}
         <div className="row">
-            <div className="col-5">
-                <h4>Ingresa el peso en Libras</h4>
+            <div className="col-12">
+                <h4 className='mt-4'>Ingresa el peso en Libras</h4>
                 <hr />
                 <form onSubmit={onCalculateSubmit}>
                     <input type="float"
@@ -72,7 +71,7 @@ export const CalculatePage = () => {
                     <hr />
                 </form>
             </div>
-                <h4>Results</h4>
+                <h4 className='mt-4'>Resultados</h4>
                 <hr />
                 <CalculateTable varMaximo={q} bar={p}/> 
 

@@ -21,7 +21,7 @@ export const Navbar = () => {
                 className="navbar-brand" 
                 to="/"
             >
-                Asociaciones
+                PR App
             </Link>
 
             <div className="navbar-collapse">
@@ -32,14 +32,14 @@ export const Navbar = () => {
                         to="/weighlifting"
 
                     >
-                        Weighlifting
+                        Levantamientos
                     </NavLink>
 
                     <NavLink 
                         className={({isActive}) => `nav-item nav-link ${ isActive ? 'active':''}`} 
                         to="/gymnastic"
                     >
-                        Gymnastic
+                        Gimnásticos
                     </NavLink>
 
                     <NavLink 
