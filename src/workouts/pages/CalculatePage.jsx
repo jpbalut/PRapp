@@ -13,30 +13,18 @@ export const CalculatePage = () => {
     const location = useLocation();
 
     const {q = ''} = queryString.parse(location.search);
-    const {p = ''} = queryString.parse(location.search);
-    //const workouts = getWorkoutsByName(q);
-
-    // const showSearch = (q.type===0)
-    // const showError = (q.type!==0) && workouts.length===0
+    const {p = 45} = queryString.parse(location.search);
 
     const {calculateNumber, barraNumber, onInputChange } = useForm({
         calculateNumber: q,
         barraNumber: p
     })
-    // const onHandleSelect = (event, p)=>{
-    //     if (event.target.value === "35 Lb"){
-    //         return p = 35
-    //     } else {
-    //         return p = 45
-    //     }
-
-    // }
+   
     const onCalculateSubmit = (event) => {
     event.preventDefault();
     // if ( calculateNumber.trim().length <= 1 ) return;
     navigate(`?q=${calculateNumber}&p=${barraNumber}`)
     }
-    
     
     return (
         <>
@@ -84,18 +72,8 @@ export const CalculatePage = () => {
                     <hr />
                 </form>
             </div>
-            {/* <div className="col-7"> */}
                 <h4>Results</h4>
                 <hr />
-            {/* { 
-                (q==='') 
-                ? <div className="alert alert-primary">search workout</div>
-                : (workouts.length===0) 
-                && <div className="alert alert-danger"> No Workout <b>{q}</b> Found</div>
-            } */}
-{/* 
-                <div className="alert alert-primary animate__animated animate__fadeIn" >search workout</div>
-                <div className="alert alert-danger animate__animated animate__fadeIn" > No Workout <b>{q}</b> Found</div> */}
                 <CalculateTable varMaximo={q} bar={p}/> 
 
                 
