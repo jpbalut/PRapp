@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { useForm } from '../../hooks/useForm'
 import {CalculateTable} from '../components'
 import queryString from 'query-string'
+import { BarSelector } from '../components/BarSelector'
 //import { getWorkoutsByName } from '../helpers'
 
 
@@ -14,15 +15,15 @@ export const CalculatePage = () => {
     const {q = 135} = queryString.parse(location.search);
     const {p = 45} = queryString.parse(location.search);
 
-    const {calculateNumber, barraNumber, onInputChange } = useForm({
+    const {calculateNumber, barraWeight, onInputChange } = useForm({
         calculateNumber: q,
-        barraNumber: p
+        barraWeight: p
     })
    
     const onCalculateSubmit = (event) => {
     event.preventDefault();
     // if ( calculateNumber.trim().length <= 1 ) return;
-    navigate(`?q=${calculateNumber}&p=${barraNumber}`)
+    navigate(`?q=${calculateNumber}&p=${barraWeight}`)
     }
     
     return (
@@ -43,25 +44,7 @@ export const CalculatePage = () => {
                         onChange = {onInputChange}
                     />
                     <hr />
-                    <h4>Selecciona Tu Barra</h4>
-                    <select type="float"
-                        placeholder="Peso Barra"
-                        className="form-control"
-                        name="barraNumber"
-                        autoComplete="off"
-                        value = {barraNumber}
-                        onChange = {onInputChange}>
-                        <option 
-                            value= {45}
-                        > 
-                            45
-                        </option>
-                        <option 
-                            value={35}
-                        > 
-                            35 
-                        </option>
-                    </select> 
+                    <BarSelector valuevar={barraWeight} onchangevar= {onInputChange}/>
                     <hr />
                     <button
                         className="btn btn-outline-primary mt-1"
@@ -73,7 +56,7 @@ export const CalculatePage = () => {
             </div>
                 <h4 className='mt-4'>Resultados</h4>
                 <hr />
-                <CalculateTable varMaximo={q} bar={p}/> 
+                <CalculateTable varMaximo={q} barraWeight={p}/> 
 
                 
             {/* </div> */}
