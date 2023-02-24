@@ -36,10 +36,12 @@ export const SumPlatesPage = () => {
     
     return (
         <>
-            <div>
+      
+                <h2 className='mt-4'>Ingresa la cantidad de discos por lado que usaras</h2>
             {/* <div className='mt-4'> */}
                 <form onSubmit={onCalculateSubmit}>
-                    <h4 className='mt-4'>Discos de 45 Libras</h4>
+                    <div className= "d-flex flex-row">
+                        <h4 className='mt-4'>Discos de 45 Libras</h4>
                         <input type="float"
                         placeholder="Calcular pesos"
                         className="form-control"
@@ -47,16 +49,20 @@ export const SumPlatesPage = () => {
                         autoComplete="off"
                         value = {fourtyFivePlate}
                         onChange = {onInputChange}
-                    />
-                    <h4 className='mt-4'>Discos de 35 Libras</h4>
-                    <input type="float"
-                        placeholder="Calcular pesos"
-                        className="form-control"
-                        name="thirtyFivePlate"
-                        autoComplete="off"
-                        value = {thirtyFivePlate}
-                        onChange = {onInputChange}
-                    />
+                        />
+                    </div>
+                    <div className= "d-flex flex-row">
+                        <h4 className='mt-4'>Discos de 35 Libras</h4>
+                        <input type="float"
+                            placeholder="Calcular pesos"
+                            className="form-control"
+                            name="thirtyFivePlate"
+                            autoComplete="off"
+                            value = {thirtyFivePlate}
+                            onChange = {onInputChange}
+                        />
+                    </div>
+                    <div className= "d-flex flex-row" >
                     <h4 className='mt-4'>Discos de 25 Libras</h4>
                     <input type="float"
                         placeholder="Calcular pesos"
@@ -65,7 +71,8 @@ export const SumPlatesPage = () => {
                         autoComplete="off"
                         value = {twentyFivePlate}
                         onChange = {onInputChange}
-                    />
+                    /></div>
+                    <div className= "d-flex flex-row">
                     <h4 className='mt-4'>Discos de 15 Libras</h4>
                     <input type="float"
                         placeholder="Calcular pesos"
@@ -74,8 +81,9 @@ export const SumPlatesPage = () => {
                         autoComplete="off"
                         value = {fifteenPlate}
                         onChange = {onInputChange}
-                    />
-                    <h4 className='mt-4'>Discos de 10 Libras</h4>
+                    /></div>
+                    <div className= "d-flex flex-row">
+                        <h4 className='mt-4'>Discos de 10 Libras</h4>
                     <input type="float"
                         placeholder="Calcular pesos"
                         className="form-control"
@@ -83,8 +91,9 @@ export const SumPlatesPage = () => {
                         autoComplete="off"
                         value = {tenPlate}
                         onChange = {onInputChange}
-                    />
-                    <h4 className='mt-4'>Discos de 5 Libras</h4>
+                    /></div>
+                    <div className= "d-flex flex-row">
+                        <h4 className='mt-4'>Discos de 5 Libras</h4>
                     <input type="float"
                         placeholder="Calcular pesos"
                         className="form-control"
@@ -92,8 +101,10 @@ export const SumPlatesPage = () => {
                         autoComplete="off"
                         value = {fivePlate}
                         onChange = {onInputChange}
-                    />
-                     <BarSelector barraWeight={barraWeight} onchangevar= {onInputChange}/>
+                    /></div>
+                     <div className= "d-flex flex-row">
+                        <BarSelector barraWeight={barraWeight} onchangevar= {onInputChange}/>
+                    </div>
                      <button
                         className="btn btn-outline-primary mt-1"
                     >
@@ -101,15 +112,11 @@ export const SumPlatesPage = () => {
                     </button>
                     <hr />
                 </form>
-               
-            
-                </div>
-            {/* </div> */}
 
-            <h4 className='mt-4'>Resultados</h4>
+
+                <h1 className='mt-4'>  El peso total es de </h1>
                 <hr />
                 <CalculateTotal fourtyfive={q} thirtyfive={q2} twentyfive={q3} fifteenfive={q4} ten={q5} five={q6} barraWeight={q7}/> 
-
             
     
         </>
