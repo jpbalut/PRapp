@@ -15,8 +15,8 @@ export const WorkoutCard = ({
         athletes,
 }) => {
     
-    const workoutImageUrl = `/assets/workouts/${id}.jpg`
-    
+    //const workoutImageUrl = `/assets/workouts/${id}.jpg`
+    const workoutImageUrl = `/workouts/${id}.jpg`
     //const athletesByWorkout = (<p>{athletes}</p>)
 
     return (
