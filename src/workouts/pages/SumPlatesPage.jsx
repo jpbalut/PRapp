@@ -3,6 +3,7 @@ import { useForm } from '../../hooks/useForm'
 import queryString from 'query-string'
 import { CalculateTotal } from '../components';
 import { BarSelector } from '../components/BarSelector';
+import { WorkoutLayout } from '../layout/WorkoutLayout'
 
 export const SumPlatesPage = () => {
 
@@ -35,7 +36,7 @@ export const SumPlatesPage = () => {
     }
     
     return (
-        <>
+        <WorkoutLayout>
       
                 <h2 className='mt-4'>Ingresa la cantidad de discos por lado que usaras</h2>
             {/* <div className='mt-4'> */}
@@ -119,7 +120,7 @@ export const SumPlatesPage = () => {
                 <CalculateTotal fourtyfive={q} thirtyfive={q2} twentyfive={q3} fifteenfive={q4} ten={q5} five={q6} barraWeight={q7}/> 
             
     
-        </>
+        </WorkoutLayout>
     )
 
 }

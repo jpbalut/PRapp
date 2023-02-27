@@ -1,48 +1,26 @@
-import { useContext } from 'react';
-import { Link, NavLink, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../auth/context/AuthContext';
+import { LogoutOutlined, MenuOutlined } from "@mui/icons-material"
+import { AppBar, Grid, IconButton, Toolbar, Typography } from "@mui/material"
+import { NavLink } from "react-router-dom"
 
-
-export const Navbar = () => {
-    const navigate = useNavigate()
-    
-    const onLogout = () =>{
-        logout()
-        navigate('/login', {replace: true});
-    }
-
-    const {user, logout} = useContext(AuthContext)
-    //console.log(user)
-    
-    return (
-        <nav className="navbar navbar-expand-sm navbar-dark bg-dark p-2">
-            
-            <Link 
-                className="navbar-brand" 
-                to="/"
+export const NavBar = ({drawerWidth=240}) => {
+  return (
+    <AppBar 
+        position='fixed' 
+        sx={{ 
+            width: {sm: `calc(100% - ${drawerWidth}px)`},
+            ml: {sm: `${drawerWidth}px` }
+        }}>
+        <Toolbar>
+            <IconButton
+                color='inherit'
+                edge='start'
+                sx = {{mr:2, display: {sm: 'none'}}}
             >
-                PR App
-            </Link>
-
-            <div className="navbar-collapse">
-                <div className="navbar-nav">
-
-                    <NavLink 
-                        className={({isActive}) => `nav-item nav-link ${ isActive ? 'active':''}`} 
-                        to="/weighlifting"
-
-                    >
-                        Levantamientos
-                    </NavLink>
-
-                    <NavLink 
-                        className={({isActive}) => `nav-item nav-link ${ isActive ? 'active':''}`} 
-                        to="/gymnastic"
-                    >
-                        Gimnásticos
-                    </NavLink>
-
-                    <NavLink 
+                <MenuOutlined/>
+            </IconButton>
+            <Grid container direction='row' justifyContent='space-between' alignItems='center'>
+                <Typography variant='h6' noWrap component='div'>PR App</Typography>
+                <NavLink 
                         className={({isActive}) => `nav-item nav-link ${ isActive ? 'active':''}`} 
                         to="/calculate"
                     >
@@ -55,37 +33,12 @@ export const Navbar = () => {
                     >
                         Sumar Discos
                     </NavLink>
+                <IconButton color ='error'>
+                    <LogoutOutlined/>
+                </IconButton>
 
-                    {/* <NavLink 
-                        className={({isActive}) => `nav-item nav-link ${ isActive ? 'active':''}`} 
-                        to="/platesbyside"
-                    >
-                        Plates By Side
-                    </NavLink> */}
-
-                    <NavLink 
-                        className={({isActive}) => `nav-item nav-link ${ isActive ? "active":""}`} 
-                        to="/search"
-                    >
-                        Search
-                    </NavLink>
-                </div>
-            </div>
-
-            <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end">
-                <ul className="navbar-nav ml-auto">
-                    <span className='nav-item nav-link text-primary'>
-                        {user?.name}
-                    </span>
-
-                    <button 
-                        className="nav-item nav-link btn"
-                        onClick = {onLogout}
-                    >
-                        Logout
-                    </button>
-                </ul>
-            </div>
-        </nav>
-    )
+            </Grid>
+        </Toolbar>
+    </AppBar>
+  )
 }

@@ -4,7 +4,7 @@ import { useForm } from '../../hooks/useForm'
 import {CalculateTable, PlateCalculate45} from '../components'
 import queryString from 'query-string'
 //import { getWorkoutsByName } from '../helpers'
-
+import { WorkoutLayout } from '../layout/WorkoutLayout'
 
 export const PlatesBySidePage = () => {
 
@@ -30,7 +30,7 @@ export const PlatesBySidePage = () => {
     }
 
     return (
-        <>
+        <WorkoutLayout>
         <h1>CalculatePage</h1>
         <hr />
         <div className="row">
@@ -69,7 +69,7 @@ export const PlatesBySidePage = () => {
                 
             {/* </div> */}
         </div>
-        </>
+        </WorkoutLayout>
     )
 
 }

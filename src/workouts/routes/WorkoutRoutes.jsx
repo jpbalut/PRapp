@@ -1,12 +1,11 @@
 import { Navigate, Route, Routes } from "react-router-dom"
-import { Navbar } from "../../ui"
+import { NavBar } from "../../ui"
 import { CalculatePage, GymnasticPage, SearchPage, WeightLiftingPage, PlatesBySidePage, SumPlatesPage } from "../pages"
 import { WorkoutPage } from "../pages/WorkoutPage"
 
 export const WorkoutRoutes = () => {
   return (
     <>
-        <Navbar />
             <div className="container">
                 <Routes>
                     <Route path="gymnastic" element={<GymnasticPage/>} />
