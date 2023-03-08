@@ -3,6 +3,7 @@
 import { loginWithEmailPassword, logoutFireBase, registerUserWithEmail, signInWithGoogle } from "../../firebase/providers"
 import { clearPrLogout, startBasicPr, startNewPr } from "../workout"
 import { checkingCredentials, login, logout } from "./authSlice"
+import {getAdditionalUserInfo} from "firebase/auth"
 
 export const checkingAuthentication = (email, password ) => {
     return async(dispatch) => {
@@ -18,9 +19,13 @@ export const startGoogleSignIn = () => {
         dispatch(checkingCredentials())
         const result = await signInWithGoogle()
         if (!result.ok) return dispatch( logout(result.errorMessage) )
-        dispatch(startNewPr())
-        dispatch(login(result))
+        // const {isNewUser} = getAdditionalUserInfo(result)
+        // console.log(isNewUser)
+        // if (!!isNewUser) return dispatch(startBasicPr())
+        
 
+        dispatch(login(result))
+        // console.log('allgood')
 
     }
 }

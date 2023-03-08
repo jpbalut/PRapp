@@ -25,9 +25,9 @@ export const LoginPage = () => {
     dispatch(startLoginWithEmailPassword({email, password}))
   }
 
-  const onGoogleSignIn = () => {
-    dispatch(startGoogleSignIn())
-  }
+  // const onGoogleSignIn = () => {
+  //   dispatch(startGoogleSignIn())
+  // }
 
 
   return (
@@ -47,19 +47,19 @@ export const LoginPage = () => {
             <Alert severity='error'>{errorMessage}</Alert>
           </Grid>
           </Grid>
-          <Grid container spacing={2} sx={{mb:2, mt:1}}>
-            <Grid item xs={12} sm={6} sx = {{mt:2}} >
+          {/* <Grid container spacing={2} sx={{mb:2, mt:1}}> */}
+            <Grid item xs={12} sx = {{mt:2}} >
               <Button disabled = {isAuthenticating} type="submit" variant='contained' fullWidth>
                 Login
               </Button>
             </Grid>
-            <Grid item xs={12} sm={6} sx = {{mt:2}} >
+            {/* <Grid item xs={12} sm={6} sx = {{mt:2}} >
               <Button disabled = {isAuthenticating} variant='contained' fullWidth onClick={onGoogleSignIn}>
                 <Google/>
                 <Typography sx = {{ml:1}}>Google</Typography>
               </Button>
-            </Grid>
-          </Grid>
+            </Grid> */}
+          {/* </Grid> */}
           <Grid container direction='row' justifyContent='end'>
             <Link component={RouterLink} color = 'inherit' to="/auth/register">Crear una Cuenta</Link>
           </Grid>
