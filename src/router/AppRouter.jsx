@@ -14,10 +14,10 @@ export const AppRouter = () => {
         <Routes>
         {
         (status === 'authenticated' )
-        ? <Route path="/PRapp/*" element = {<WorkoutRoutes/> } />
-        :<Route path="/PRapp/auth/*" element = {<AuthRoutes/> } />
+        ? <Route path="/*" element = {<WorkoutRoutes/> } />
+        :<Route path="/auth/*" element = {<AuthRoutes/> } />
         }
-        <Route path='/PRapp/*' element = { <Navigate to='/PRapp/auth/login'/>} />
+        <Route path='/*' element = { <Navigate to='/auth/login'/>} />
     </Routes>
     </>
   )

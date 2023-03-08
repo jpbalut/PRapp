@@ -6,16 +6,16 @@ export const WorkoutRoutes = () => {
   return (
 
     <Routes>
-        <Route path="PRapp/rms" element={<WorkoutsPage/>} />
+         <Route path="rms" element={<WorkoutsPage/>} />
         {/* <Route path="weighlifting" element={ <WeightLiftingPage/> }/> */}
         {/* <Route path="search" element={<SearchPage/>} /> */}
-        <Route path="PRapp/calculate" element={<CalculatePage/>} />
+        <Route path="calculate" element={<CalculatePage/>} />
         {/* <Route path="platesbyside" element={<PlatesBySidePage/>} /> */}
-        {/* <Route path="workout/:id" element={ <WorkoutPage/> }/> */}
-        <Route path="PRapp/sumplates" element={ <SumPlatesPage /> }/>
-        <Route path="PRapp/*" element={ <Navigate to="/PRapp/calculate" /> }/>
+        <Route path="workout/:id" element={ <WorkoutPage/> }/>
+        <Route path="/sumplates" element={ <SumPlatesPage /> }/>
+        <Route path="/*" element={ <Navigate to="/calculate" /> }/>
 
-        <Route path="PRapp/" element={ <Navigate to="/PRapp/calculate" /> }/>
+        <Route path="/" element={ <Navigate to="/calculate" /> }/>
         
         
 

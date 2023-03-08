@@ -4,10 +4,10 @@ import { LoginPage, RegisterPage } from "../pages"
 export const AuthRoutes = () => {
   return (
     <Routes>
-        <Route path = "PRapp/login" element={ <LoginPage/>}  />
-        <Route path = "PRapp/register" element={ <RegisterPage/>}  />
+        <Route path = "/login" element={ <LoginPage/>}  />
+        <Route path = "/register" element={ <RegisterPage/>}  />
 
-        <Route path = "/PRapp/*" element={ <Navigate to = "/PRapp/auth/login" />}  />
+        <Route path = "/*" element={ <Navigate to = "/auth/login" />}  />
     </Routes>
   )
 }
