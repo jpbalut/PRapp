@@ -13,9 +13,9 @@ export const WorkoutRoutes = () => {
         {/* <Route path="platesbyside" element={<PlatesBySidePage/>} /> */}
         <Route path="workout/:id" element={ <WorkoutPage/> }/>
         <Route path="/sumplates" element={ <SumPlatesPage /> }/>
-        <Route path="/*" element={ <Navigate to="/calculate" /> }/>
+        <Route path="/*" element={ <Navigate to="/rms" /> }/>
 
-        <Route path="/" element={ <Navigate to="/calculate" /> }/>
+        <Route path="/" element={ <Navigate to="/rms" /> }/>
         
         
 

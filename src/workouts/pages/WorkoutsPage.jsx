@@ -6,7 +6,7 @@ import { WorkoutLayout } from '../layout/WorkoutLayout'
 import { NothingSelectedView, PrView} from '../views'
 
 export const WorkoutsPage = () => {
-  const {isSaving, active} = useSelector(state => state.workout)
+  const {active} = useSelector(state => state.workout)
   const dispatch = useDispatch();
 
   const onClickNewPr = () => {
