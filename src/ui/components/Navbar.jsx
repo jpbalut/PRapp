@@ -3,6 +3,7 @@ import { AppBar, Grid, IconButton, Toolbar, Typography } from "@mui/material"
 import { useDispatch, useSelector } from "react-redux"
 import { NavLink } from "react-router-dom"
 import { logout, startLogout } from "../../store"
+import { deSelectPr } from "../../store/workout"
 import { FadeMenu } from "./FadeMenu"
 
 export const NavBar = ({drawerWidth=240}) => {
