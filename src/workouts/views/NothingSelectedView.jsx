@@ -1,7 +1,10 @@
-import { StarOutline } from "@mui/icons-material"
-import { Grid, Typography } from "@mui/material"
+// import { StarOutline } from "@mui/icons-material"
+import { Grid } from "@mui/material"
+import { useSelector } from "react-redux"
+import { WorkoutList } from "../components"
 
 export const NothingSelectedView = () => {
+  const {exercise} = useSelector(state => state.workout)
   return (
     <Grid
       container
@@ -9,14 +12,15 @@ export const NothingSelectedView = () => {
       direction="column"
       alignItems="center"
       justifyContent="center"
-      sx={{ minHeight: 'calc(100vh - 110px)' , backgroundColor: 'primary.main', borderRadius: 3}}
+      sx={{ minHeight: 'calc(100vh - 110px)' , backgroundColor: 'white', borderRadius: 3}}
       >
-        <Grid item xs={12}>
+        <WorkoutList prs={exercise}/>
+        {/* <Grid item xs={12}>
             <StarOutline sx={{fontSize: 100, color:'white'}}/>
         </Grid>
         <Grid item xs={12}>
             <Typography color="white" variant="h5">Selecciona o crea una entrada</Typography>
-        </Grid>
+        </Grid> */}
     </Grid>
   )
 }

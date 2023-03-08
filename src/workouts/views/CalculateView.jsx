@@ -7,29 +7,13 @@ import { BarSelector } from '../components/BarSelector'
 import { Grid } from '@mui/material'
 //import { getWorkoutsByName } from '../helpers'
 import { WorkoutLayout } from '../layout/WorkoutLayout'
+import { useSelector } from 'react-redux'
 
 //const discos_lb = [5, 10, 15, 25, 35, 45, 55]
 
-export const CalculatePage = () => {
-
-    const navigate = useNavigate();
-    const location = useLocation();
-
-    const {q = 135} = queryString.parse(location.search);
-    const {p = 45} = queryString.parse(location.search);
-
-    const {calculateNumber, barraWeight, onInputChange } = useFormBasic({
-        calculateNumber: q,
-        barraWeight: p
-    })
+export const CalculateView = () => {
 
 
-
-    const onCalculateSubmit = (event) => {
-    event.preventDefault();
-    // if ( calculateNumber.trim().length <= 1 ) return;
-    navigate(`?q=${calculateNumber}&p=${barraWeight}`)
-    }
     // const handleAutoAssignSwitch = ()=>{
     //     console.log('cambio switch')
     // }
@@ -37,7 +21,7 @@ export const CalculatePage = () => {
     // const handleCheckBoxChange = (event) =>{
     //     console.log(`Se desmarco ${event.target.id}`)
     // }
-
+    const { active:ejercicio } = useSelector(state => state.workout)
     return (
         <WorkoutLayout>
         <Grid
@@ -49,9 +33,7 @@ export const CalculatePage = () => {
             sx={{ minHeight: 'calc(100vh - 110px)' , borderRadius: 3}}
         >
             <h1>Calculador de Porcentajes</h1>
-            <p>Con esta herramienta podrás calcular cuantos discos por lado debes ponerla a tu barra, según tu RM para cada uno de los porcentajes típicos de trabajo.</p>
         <div className="row">
-        {/* <h4 className='mt-4'>Elige Libras o Kilogramos</h4> */}
             {/* <Stack direction="row" spacing={1} alignItems="center">
                 <SwitchContainer
                     label="Lb"
@@ -63,19 +45,7 @@ export const CalculatePage = () => {
             </Stack> */}
       
             <div className="col-12">
-                <h4 className='mt-4'>Ingresa el peso en Libras</h4>
-                <hr />
-                <form onSubmit={onCalculateSubmit}>
-                    <input type="float"
-                        placeholder="Calcular pesos"
-                        className="form-control"
-                        name="calculateNumber"
-                        autoComplete="off"
-                        value = {calculateNumber}
-                        onChange = {onInputChange}
-                    />
-                
-                    <hr />
+                <form>
                     <BarSelector valuevar={barraWeight} onchangevar= {onInputChange}/>
                     {/* <fieldset data-role = "controlgroup" data-type = "horizontal">
                         <legend>Discos Disponibles en tu Gimnasio</legend>
@@ -88,17 +58,11 @@ export const CalculatePage = () => {
                         
                     </fieldset> */}
                     <hr />
-                    <button
-                        className="btn btn-outline-primary mt-1"
-                    >
-                        Calcular
-                    </button>
-                    <hr />
                 </form>
             </div>
-                <h4 className='mt-4'>Resultados</h4>
-                <hr />
-                <CalculateTable varMaximo={q} barraWeight={p}/> 
+                <CalculateTable varMaximo={ejercicio.Rm} barraWeight={45}/> 
+                <button className="btn btn-outline-primary" onClick={onBack}>Back</button>
+        
 
                 
             {/* </div> */}

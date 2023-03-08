@@ -5,3 +5,4 @@ export * from './WorkoutPage';
 export * from './CalculatePage';
 export * from './PlatesBySidePage';
 export * from './SumPlatesPage';
+export * from './WorkoutsPage'
