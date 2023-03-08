@@ -25,7 +25,7 @@ export const workout = [
         date: new Date().getTime(),
         name:'Clean & Jerk', 
         type:'Weightlifting', 
-        imageUrls: ["https://res.cloudinary.com/dywb9vy1i/image/upload/v1678282459/pr-app/basics/wl-jerk_yuhqim.jpg"],
+        imageUrls: ["https://res.cloudinary.com/dywb9vy1i/image/upload/v1678296830/pr-app/basics/wl-cleanjerk_xcc93n.webp"],
     },
     {
         Rm:0,
@@ -53,7 +53,51 @@ export const workout = [
         date: new Date().getTime(),
         name:'Power Snatch', 
         type:'Weightlifting', 
-        imageUrls: ["https://res.cloudinary.com/dywb9vy1i/image/upload/v1678282460/pr-app/basics/wl-snatch_bbxn1a.jpg"],
+        imageUrls: ["https://res.cloudinary.com/dywb9vy1i/image/upload/v1678296596/pr-app/basics/wl-powersnatch_fhcbmj.webp"],
+    },
+    {
+        Rm:0,
+        date: new Date().getTime(),
+        name:'Power Clean', 
+        type:'Weightlifting', 
+        imageUrls: ["https://res.cloudinary.com/dywb9vy1i/image/upload/v1678296830/pr-app/basics/wl-powerclean_bvxdf2.webp"],
+    }
+    ,
+    {
+        Rm:0,
+        date: new Date().getTime(),
+        name:'Push Press', 
+        type:'Weightlifting', 
+        imageUrls: ["https://res.cloudinary.com/dywb9vy1i/image/upload/v1678296830/pr-app/basics/wl-pushpress_kv9v9o.webp"],
+    }
+    ,
+    {
+        Rm:0,
+        date: new Date().getTime(),
+        name:'Shoulder Press', 
+        type:'Weightlifting', 
+        imageUrls: ["https://res.cloudinary.com/dywb9vy1i/image/upload/v1678282460/pr-app/basics/wl-shoulderpress_ckn8yf.png"],
+    },
+    {
+        Rm:0,
+        date: new Date().getTime(),
+        name:'Thruster', 
+        type:'Weightlifting', 
+        imageUrls: ["https://res.cloudinary.com/dywb9vy1i/image/upload/v1678282460/pr-app/basics/wl-thruster_w8cfbd.jpg"],
+    },
+    {
+        Rm:0,
+        date: new Date().getTime(),
+        name:'Cluster', 
+        type:'Weightlifting', 
+        imageUrls: ["https://res.cloudinary.com/dywb9vy1i/image/upload/v1678282459/pr-app/basics/wl-cluster_nplwxq.jpg"],
+    },
+    {
+        Rm:0,
+        date: new Date().getTime(),
+        name:'Over Head Squat', 
+        type:'Weightlifting', 
+        imageUrls: ["https://res.cloudinary.com/dywb9vy1i/image/upload/v1678282460/pr-app/basics/wl-ohs_iwmj6j.jpg"],
     }
 ]
 

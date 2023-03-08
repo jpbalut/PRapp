@@ -29,12 +29,14 @@ export const startNewPr = () => {
 export const startBasicPr = () => {
     return async(dispatch, getState) => {
         dispatch(savingNewPr())
+        console.log(workout)
         const {uid} = getState().auth
         for (const pr of workout) {
             const newDoc = doc(collection(FirebaseDB, `${uid}/workout/exercise`))
             await setDoc(newDoc, pr)
             pr.id = newDoc.id;
             dispatch(addNewEmptyPr( pr))
+            
         }
     }
 }
