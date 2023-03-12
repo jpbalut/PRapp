@@ -15,6 +15,8 @@ export const startNewPr = () => {
             name: '',
             type: '',
             imageUrls: [],
+            historical_dates: [],
+            historical_Rm: [],
         }
         const newDoc = doc(collection(FirebaseDB, `${uid}/workout/exercise`))
 

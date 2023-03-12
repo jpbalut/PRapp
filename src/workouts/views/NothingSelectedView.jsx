@@ -1,11 +1,10 @@
 // import { StarOutline } from "@mui/icons-material"
-import { Button, Grid } from "@mui/material"
-import { useDispatch, useSelector } from "react-redux"
+import { Grid } from "@mui/material"
+import { useSelector } from "react-redux"
 // import { getAllUsers } from "../../store/workout"
 import { WorkoutList } from "../components"
 
 export const NothingSelectedView = () => {
-  const dispatch = useDispatch()
   const {exercise} = useSelector(state => state.workout)
 //   const updateFields = () => {
 //     dispatch(getAllUsers())
