@@ -33,11 +33,16 @@ export const workoutSlice = createSlice({
             state.isSaving = false
             state.exercise = state.exercise.map(pr => {
                 if (pr.id === action.payload.id){
+                    console.log(action.payload)
                     return action.payload
                 }
                 return pr
             })
             state.messageSaved = `${action.payload.Rm} actualizado correctamente`
+        },
+        setNewDateToActivePr: (state, action ) =>{
+            state.active.date = action.payload
+            state.isSaving = false;
         },
         setPhotosToActivePr: (state, action ) =>{
             state.active.imageUrls = [...state.active.imageUrls, ...action.payload]
@@ -67,4 +72,4 @@ export const workoutSlice = createSlice({
         },
     }
 });
-export const { deSelectPr, savingNewPr, setNotDeteletedPhotosToActivePr, addNewEmptyPr, setActivePr, setPr, setSaving, updatePr, deletePrById, setPhotosToActivePr, clearPrLogout, deleteImage } = workoutSlice.actions;
+export const { setNewDateToActivePr, deSelectPr, savingNewPr, setNotDeteletedPhotosToActivePr, addNewEmptyPr, setActivePr, setPr, setSaving, updatePr, deletePrById, setPhotosToActivePr, clearPrLogout, deleteImage } = workoutSlice.actions;

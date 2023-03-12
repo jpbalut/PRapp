@@ -15,6 +15,8 @@ export const WorkoutCard = ({
     type, 
     id,
     imageUrls,
+    historical_dates,
+    historical_Rm
 }) => {
 
 const dateString = useMemo(()=>{
@@ -24,7 +26,7 @@ const dateString = useMemo(()=>{
 }, [date])
 const dispatch = useDispatch();
 const onClickPr = ()=> {
-    dispatch(setActivePr( { Rm, date, name, type, id, imageUrls,} ))
+    dispatch(setActivePr( { Rm, date, name, type, id, imageUrls, historical_dates, historical_Rm} ))
 }
 // const newName = React.useMemo(() => {
 //     return name.length>17 

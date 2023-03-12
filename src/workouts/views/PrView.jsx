@@ -1,26 +1,29 @@
-import { CalculateOutlined, DeleteOutline, SaveOutlined, UploadOutlined } from "@mui/icons-material"
-import { Button, Grid, IconButton, MenuItem, Select, TextField, Typography } from "@mui/material"
+import { CalculateOutlined, SaveOutlined } from "@mui/icons-material"
+import { Button, Experimental_CssVarsProvider, Grid, TextField } from "@mui/material"
 import { useEffect, useMemo, useRef } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { Navigate, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import Swal from "sweetalert2"
 import 'sweetalert2/dist/sweetalert2.css'
 import { useForm } from "../../hooks/useForm"
 import { deSelectPr, setActivePr, startDeletingPr, startSavePr, startUploadingFiles } from "../../store/workout" 
-import { CalculateTable, ImageGallery } from "../components"
+//import { CalculateTable, ImageGallery } from "../components"
 // import { CalculateTable } from "../components/CalculateTable"
 // import { ImageGallery } from "../components"
+import { VictoryChart, VictoryLine, VictoryTheme } from 'victory'
+import { HistoricalTable } from "../components/HistoricalTable"
+import { updateCurrentUser } from "firebase/auth"
+import { updateFieldsFB } from "../helpers/updateFieldsFB"
 
 
 export const PrView = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch();
     const { active:ejercicio, messageSaved, isSaving } = useSelector(state => state.workout)
-    const {Rm, date, type, name, onInputChange, formState} = useForm(ejercicio)
+    const {Rm, date, type, name, historical_Rm, historical_dates, onInputChange, formState} = useForm(ejercicio)
     const dateString = useMemo(()=>{
         const newDate = new Date(date)
-
-        return newDate.toUTCString()
+        return newDate.toLocaleDateString()
     }, [date])
 
     const fileInputRef = useRef();
@@ -29,6 +32,7 @@ export const PrView = () => {
     useEffect(() => {
       dispatch(setActivePr(formState))
     }, [formState])
+  
     
     useEffect(() => {
         if(messageSaved.length>0){
@@ -37,7 +41,7 @@ export const PrView = () => {
       }, [messageSaved])
 
     const onSavePr = () => {
-        dispatch(startSavePr())
+        dispatch(startSavePr(ejercicio))
     }
 
     const onFileInputChange = ({target})=>{
@@ -57,7 +61,16 @@ export const PrView = () => {
     const onCalculate = ()=> {
         navigate(`/calculate?q=${ejercicio.Rm}&p=${45}`) 
     }
+    const graphData = (fechas, rms) => {
+        const data = []
+        fechas.forEach((fecha, index) => {
+            const stringFecha = new Date(fecha)
+            data[index] = {x: stringFecha.toLocaleDateString(), y: rms[index]}
+        }); 
+        return data
+    }
 
+    
   return (
     <Grid //container direction = 'row' justifyContent='space-between' alignItems='center' sx={{mb:1}}>
     container
@@ -163,8 +176,22 @@ export const PrView = () => {
             
             
         </Grid>
-
-
-    </Grid>
-  )
+{ !!(ejercicio.historical_Rm && ejercicio.historical_dates )
+    ?   <> 
+            <VictoryChart
+                theme={VictoryTheme.material}
+             >
+            <VictoryLine
+                style={{
+                data: { stroke: "#c43a31" },
+                parent: { border: "1px solid #ccc"}
+                }}
+                data={graphData(historical_dates, historical_Rm)}
+            />
+            </VictoryChart>
+            <HistoricalTable dates = {historical_dates} prs = {historical_Rm}/> </>
+    :   <></> }
+            
+        </Grid>
+    )
 }

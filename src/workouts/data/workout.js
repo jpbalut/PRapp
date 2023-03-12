@@ -5,6 +5,9 @@ export const workout = [
         name:'Back Squat', 
         type:'Weightlifting', 
         imageUrls: ["https://res.cloudinary.com/dywb9vy1i/image/upload/v1678282459/pr-app/basics/wl-backsquat_hmswjz.jpg"],
+        historical_dates: [],
+        historical_Rm: [],
+
     },
     {
         Rm:0,
@@ -12,6 +15,8 @@ export const workout = [
         name:'Snatch', 
         type:'Weightlifting', 
         imageUrls: ["https://res.cloudinary.com/dywb9vy1i/image/upload/v1678282460/pr-app/basics/wl-snatch_bbxn1a.jpg"],
+        historical_dates: [],
+        historical_Rm: [],
     },
     {
         Rm:0,
@@ -19,6 +24,8 @@ export const workout = [
         name:'Clean', 
         type:'Weightlifting', 
         imageUrls: ["https://res.cloudinary.com/dywb9vy1i/image/upload/v1678282460/pr-app/basics/wl-clean_k5urij.png"],
+        historical_dates: [],
+        historical_Rm: [],
     },
     {
         Rm:0,
@@ -26,6 +33,8 @@ export const workout = [
         name:'Clean & Jerk', 
         type:'Weightlifting', 
         imageUrls: ["https://res.cloudinary.com/dywb9vy1i/image/upload/v1678296830/pr-app/basics/wl-cleanjerk_xcc93n.webp"],
+        historical_dates: [],
+        historical_Rm: [],
     },
     {
         Rm:0,
@@ -33,6 +42,8 @@ export const workout = [
         name:'Jerk', 
         type:'Weightlifting', 
         imageUrls: ["https://res.cloudinary.com/dywb9vy1i/image/upload/v1678282459/pr-app/basics/wl-jerk_yuhqim.jpg"],
+        historical_dates: [],
+        historical_Rm: [],
     },
     {
         Rm:0,
@@ -40,6 +51,8 @@ export const workout = [
         name:'Front Squat', 
         type:'Weightlifting', 
         imageUrls: ["https://res.cloudinary.com/dywb9vy1i/image/upload/v1678282459/pr-app/basics/wl-frontsquat_ocbaas.jpg"],
+        historical_dates: [],
+        historical_Rm: [],
     },
     {
         Rm:0,
@@ -47,6 +60,8 @@ export const workout = [
         name:'DeadLift', 
         type:'Weightlifting', 
         imageUrls: ["https://res.cloudinary.com/dywb9vy1i/image/upload/v1678282460/pr-app/basics/wl-deadlift_lmiptj.png"],
+        historical_dates: [],
+        historical_Rm: [],
     },
     {
         Rm:0,
@@ -54,6 +69,8 @@ export const workout = [
         name:'Power Snatch', 
         type:'Weightlifting', 
         imageUrls: ["https://res.cloudinary.com/dywb9vy1i/image/upload/v1678296596/pr-app/basics/wl-powersnatch_fhcbmj.webp"],
+        historical_dates: [],
+        historical_Rm: [],
     },
     {
         Rm:0,
@@ -61,6 +78,8 @@ export const workout = [
         name:'Power Clean', 
         type:'Weightlifting', 
         imageUrls: ["https://res.cloudinary.com/dywb9vy1i/image/upload/v1678296830/pr-app/basics/wl-powerclean_bvxdf2.webp"],
+        historical_dates: [],
+        historical_Rm: [],
     }
     ,
     {
@@ -69,6 +88,8 @@ export const workout = [
         name:'Push Press', 
         type:'Weightlifting', 
         imageUrls: ["https://res.cloudinary.com/dywb9vy1i/image/upload/v1678296830/pr-app/basics/wl-pushpress_kv9v9o.webp"],
+        historical_dates: [],
+        historical_Rm: [],
     }
     ,
     {
@@ -77,6 +98,8 @@ export const workout = [
         name:'Shoulder Press', 
         type:'Weightlifting', 
         imageUrls: ["https://res.cloudinary.com/dywb9vy1i/image/upload/v1678282460/pr-app/basics/wl-shoulderpress_ckn8yf.png"],
+        historical_dates: [],
+        historical_Rm: [],
     },
     {
         Rm:0,
@@ -84,6 +107,8 @@ export const workout = [
         name:'Thruster', 
         type:'Weightlifting', 
         imageUrls: ["https://res.cloudinary.com/dywb9vy1i/image/upload/v1678282460/pr-app/basics/wl-thruster_w8cfbd.jpg"],
+        historical_dates: [],
+        historical_Rm: [],
     },
     {
         Rm:0,
@@ -91,6 +116,8 @@ export const workout = [
         name:'Cluster', 
         type:'Weightlifting', 
         imageUrls: ["https://res.cloudinary.com/dywb9vy1i/image/upload/v1678282459/pr-app/basics/wl-cluster_nplwxq.jpg"],
+        historical_dates: [],
+        historical_Rm: [],
     },
     {
         Rm:0,
@@ -98,6 +125,8 @@ export const workout = [
         name:'Over Head Squat', 
         type:'Weightlifting', 
         imageUrls: ["https://res.cloudinary.com/dywb9vy1i/image/upload/v1678282460/pr-app/basics/wl-ohs_iwmj6j.jpg"],
+        historical_dates: [],
+        historical_Rm: [],
     }
 ]
 
