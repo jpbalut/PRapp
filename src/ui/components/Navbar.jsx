@@ -55,22 +55,22 @@ export const NavBar = ({drawerWidth=240}) => {
                         className={({isActive}) => `nav-item nav-link ${ isActive ? 'active':''}`} 
                         to="/calculate"
                     >
-                        Calculate Lb
+                        Calcular en Lb
                     </NavLink>
 
                     <NavLink 
                         className={({isActive}) => `nav-item nav-link ${ isActive ? 'active':''}`} 
                         to="/calculatekg"
                     >
-                        Calculate Kg
+                        Calcular en Kg
                     </NavLink>
 
-                    <NavLink 
+                    {/* <NavLink 
                         className={({isActive}) => `nav-item nav-link ${ isActive ? 'active':''}`} 
                         to="/sumplates"
                     >
                         Sumar Discos
-                    </NavLink>
+                    </NavLink> */}
 
                     {/* <IconButton> <SearchOutlined sx={{color: 'white'}}/> </IconButton> */}
 
