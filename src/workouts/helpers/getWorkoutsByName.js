@@ -6,7 +6,7 @@ export const getWorkoutsByName = (name = '') => {
     if  (name.length === 0) return [];
 
     return workout.filter(
-        workout => workout.exercise.toLocaleLowerCase().includes(name)
+        workout => workout.name.toLocaleLowerCase().includes(name)
     )
        
 

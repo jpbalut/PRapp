@@ -6,3 +6,4 @@ export * from './CalculatePage';
 export * from './PlatesBySidePage';
 export * from './SumPlatesPage';
 export * from './WorkoutsPage'
+export * from './CalculatePageKg'

@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom"
-import { WorkoutsPage, CalculatePage, SumPlatesPage, WorkoutPage } from "../pages"
+import { WorkoutsPage, CalculatePage, SumPlatesPage, WorkoutPage, SearchPage, CalculatePageKg } from "../pages"
 
 
 export const WorkoutRoutes = () => {
@@ -10,6 +10,7 @@ export const WorkoutRoutes = () => {
         {/* <Route path="weighlifting" element={ <WeightLiftingPage/> }/> */}
         {/* <Route path="search" element={<SearchPage/>} /> */}
         <Route path="calculate" element={<CalculatePage/>} />
+        <Route path="calculatekg" element={<CalculatePageKg/>} />
         {/* <Route path="platesbyside" element={<PlatesBySidePage/>} /> */}
         <Route path="workout/:id" element={ <WorkoutPage/> }/>
         <Route path="/sumplates" element={ <SumPlatesPage /> }/>

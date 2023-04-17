@@ -1,8 +1,8 @@
 import { useLocation, useNavigate } from 'react-router-dom'
-import { useForm } from '../../hooks/useForm'
 import {WorkoutCard} from '../components'
 import queryString from 'query-string'
 import { getWorkoutsByName } from '../helpers'
+import { useFormBasic } from '../../hooks'
 
 export const SearchPage = () => {
 
@@ -16,7 +16,7 @@ export const SearchPage = () => {
   const showSearch = (q.length===0)
   const showError = (q.length>0) && workouts.length===0
   
-  const {searchText, onInputChange } = useForm({
+  const {searchText, onInputChange } = useFormBasic({
     searchText: q
   })
 

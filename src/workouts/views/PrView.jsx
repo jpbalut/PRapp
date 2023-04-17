@@ -12,8 +12,6 @@ import { deSelectPr, setActivePr, startDeletingPr, startSavePr, startUploadingFi
 // import { ImageGallery } from "../components"
 import { VictoryChart, VictoryLine, VictoryTheme } from 'victory'
 import { HistoricalTable } from "../components/HistoricalTable"
-import { updateCurrentUser } from "firebase/auth"
-import { updateFieldsFB } from "../helpers/updateFieldsFB"
 
 
 export const PrView = () => {
@@ -60,6 +58,9 @@ export const PrView = () => {
 
     const onCalculate = ()=> {
         navigate(`/calculate?q=${ejercicio.Rm}&p=${45}`) 
+    }
+    const onCalculateKg = ()=> {
+        navigate(`/calculateKg?q=${ejercicio.Rm*0.453592}&p=${20}`) 
     }
     const graphData = (fechas, rms) => {
         const data = []
@@ -125,7 +126,11 @@ export const PrView = () => {
 
             <Button disabled = {isSaving} onClick = {onCalculate} color ='primary' sx={{padding: 2}}>
                 <CalculateOutlined sx={{ fontSize: 30, mr:1}}/>
-                Calcular
+                Calcular en Lb
+            </Button>
+            <Button disabled = {isSaving} onClick = {onCalculateKg} color ='primary' sx={{padding: 2}}>
+                <CalculateOutlined sx={{ fontSize: 30, mr:1}}/>
+                Calcular en Kg
             </Button>
         </Grid>
         <Grid container>

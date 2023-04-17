@@ -1,4 +1,4 @@
-import { LogoutOutlined, MenuOutlined } from "@mui/icons-material"
+import { LogoutOutlined, MenuOutlined, SearchOffOutlined, SearchOffTwoTone, SearchOutlined } from "@mui/icons-material"
 import { AppBar, Grid, IconButton, Toolbar, Typography } from "@mui/material"
 import { useDispatch, useSelector } from "react-redux"
 import { NavLink } from "react-router-dom"
@@ -55,7 +55,14 @@ export const NavBar = ({drawerWidth=240}) => {
                         className={({isActive}) => `nav-item nav-link ${ isActive ? 'active':''}`} 
                         to="/calculate"
                     >
-                        Calculate
+                        Calculate Lb
+                    </NavLink>
+
+                    <NavLink 
+                        className={({isActive}) => `nav-item nav-link ${ isActive ? 'active':''}`} 
+                        to="/calculatekg"
+                    >
+                        Calculate Kg
                     </NavLink>
 
                     <NavLink 
@@ -65,9 +72,12 @@ export const NavBar = ({drawerWidth=240}) => {
                         Sumar Discos
                     </NavLink>
 
+                    {/* <IconButton> <SearchOutlined sx={{color: 'white'}}/> </IconButton> */}
+
                 <IconButton onClick={onLogout} color ='error'>
                     <LogoutOutlined  />
                 </IconButton>
+                
 
             </Grid>
         </Toolbar>
